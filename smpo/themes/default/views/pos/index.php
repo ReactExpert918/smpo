@@ -1275,12 +1275,12 @@
                                     let value = this.responseText;
                                     let parse = JSON.parse(value);
                                     if(parse["number"] == null) parse["number"] = 0;
-                                    if(parse["amount1"] == null) {parse["amount1"] = 0;}
+                                    if(parse["amount"] == null) {parse["amount"] = 0;}
                                     if(parse["paid"] == null) {parse["paid"] = 0;}
                                     document.getElementById("number").innerHTML = formatMoney(parse["number"], 0) + ' sales';
-                                    document.getElementById("amount1").innerHTML = formatMoney(parse["amount1"], 0) + ' amount';
+                                    document.getElementById("amount1").innerHTML = formatMoney(parse["amount"], 0) + ' amount';
                                     document.getElementById("paid").innerHTML = formatMoney(parse["paid"], 0) + ' paid';
-                                    document.getElementById("due").innerHTML = formatMoney(parse["amount1"] - parse["paid"], 0) + ' due';
+                                    document.getElementById("due").innerHTML = formatMoney(parse["amount"] - parse["paid"], 0) + ' due';
                                 }
                             };
                             xmlhttp.open("GET","pos/amount?custom="+val,true);
